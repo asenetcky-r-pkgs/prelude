@@ -26,7 +26,8 @@ for connections, authentication and other common objects needed in their analyti
 You can install the development version of prelude like so:
 
 ``` {r install}
-# insert github link when ready
+# install.packages("pak")
+# pak::pkg_install("asenetcky/prelude")
 ```
 
 ## Authentication

@@ -16,7 +16,8 @@ common objects needed in their analytic workflow.
 You can install the development version of prelude like so:
 
 ``` r
-# insert github link when ready
+# install.packages("pak")
+# pak::pkg_install("asenetcky/prelude")
 ```
 
 ## Authentication
@@ -81,9 +82,9 @@ for users to handle as they see fit.
 errors <- grab_prelude_errors()
 
 errors$auth$message
-#> [2025-04-07 13:59:26.7330]: ERROR: Credential not found
+#> [2025-04-07 14:37:16.2978]: ERROR: Credential not found
 errors$conn$message
-#> [2025-04-07 13:59:26.6739]: ERROR: Missing expected DSNs
+#> [2025-04-07 14:37:16.2384]: ERROR: Missing expected DSNs
 ```
 
 ## Environment
