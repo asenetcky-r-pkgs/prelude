@@ -1,3 +1,5 @@
-# prelude (development version)
+# prelude 0.4.0
 
-- Prep for Open Source
+## Features
+- add baseline functions to prep this package for open source
+- add functions for returning values from prelude
