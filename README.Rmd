@@ -1,0 +1,80 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# prelude
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `prelude` is to help setup the development environment for users and provide helpers
+for connections, authentication and other common objects needed in their analytic workflow.
+
+## Installation
+
+You can install the development version of prelude like so:
+
+``` {r install}
+# insert github link when ready
+```
+
+## Authentication
+
+Users in their production environment with their keyring already setup will have easy access
+to the authentication related credentials.
+
+```{r example}
+library(prelude)
+
+auth <- prelude::grab_prelude_auth()
+
+auth
+```
+
+
+## Connections
+
+Users who already have their dsns setup with generic names like prod, stg, and dev
+will have easy access to them.  `prelude` provides easy access to the different connections.
+
+```{r}
+prod <- prelude::grab_prod_conn()
+stg <- prelude::grab_stg_conn()
+dev <- prelude::grab_dev_conn()
+
+prod
+stg
+dev
+```
+
+## Errors and Placeholders
+
+If users are not in the expected production environment `prelude` will use
+fake placeholders instead, and `purrr::safely` capture any errors for
+users to handle as they see fit.
+
+```{r}
+errors <- grab_prelude_errors()
+
+errors$auth$message
+errors$conn$message
+```
+
+## Environment
+
+`prelude` loads the prelude object into the empty environment, named
+`the` on package attachment. The `the` environment is built at compile
+time and is not directly available to developers during run time. 
+However, they will be able to access the contents of prelude through 
+the exported `grab` family of functions.
