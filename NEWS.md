@@ -1,9 +1,5 @@
 # prelude 0.4.0
 
-# prelude 0.3.0
-
-# prelude 0.2.0
-
-# prelude 0.1.0
-
-- Prep for Open Source
+## Features
+- add baseline functions to prep this package for open source
+- add functions for returning vlaues from pelude
